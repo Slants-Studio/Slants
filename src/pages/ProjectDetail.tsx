@@ -5,6 +5,7 @@ import { ArrowLeft, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react
 import { cn } from "../lib/utils";
 import { ImageCarousel } from "../components/ImageCarousel";
 import { Footer } from "../components/Footer";
+import logoDark from "../assets/logo-dark.svg";
 
 export default function ProjectDetail() {
   const { id } = useParams();
@@ -32,7 +33,7 @@ export default function ProjectDetail() {
               project.textColor
             )}
           >
-            <img src="/src/assets/logo-dark.svg" alt="" className="lg:fixed z-40 top-10 w-8 lg:w-12 h-auto" />
+            <img src={logoDark} alt="" className="lg:fixed z-40 top-10 w-8 lg:w-12 h-auto" />
           </Link>
           <div className="font-mono text-xs opacity-40">
             {project.id.toUpperCase()}.FILE
