@@ -7,6 +7,7 @@ import { cn } from "../lib/utils";
 import { LagosClock } from "../components/LagosClock";
 import { useLocation } from "react-router-dom";
 import { Footer } from "../components/Footer";
+import logoDark from "../assets/logo-dark.svg";
 
 export default function Home() {
   const location = useLocation();
@@ -41,21 +42,21 @@ export default function Home() {
       <LagosClock />
 
       <div className="h-screen flex flex-col relative z-10">
-        <header className="p-8 md:p-16 flex justify-between items-start z-50 pointer-events-none">
-          <div className="pointer-events-auto absolute top-14 ">
+        <header className="p-8 md:p-16 flex justify-between items-start z-50 pointer-events-none ">
+          <div className="pointer-events-auto absolute top-14 leading-none flex flex-col gap-3">
             {/* <h1 className="text-4xl md:text-8xl font-black tracking-tighter mb-4 leading-[0.8]">
               SLANTS<br />STUDIO
             </h1> */}
-            <img src="src/assets/logo-dark.svg" alt="" className="w-10 lg:w-16 h-auto sticky top-10" />
+            <img src={logoDark} alt="" className="w-10 lg:w-12 h-auto" />
 
-            <div className="hidden md:block text-sm opacity-40 pointer-events-auto">
-              EST. 2024
+            <div className="hidden md:block  text-sm opacity-40 pointer-events-auto">
+              EST. 2026
             </div>
-            <p className="text-sm md:text-lg">
-              Design studio <br />Lagos, Milan
+            <p className="text-md font-black md:text-lg leading-none">
+              Design studio <br />Lagos
             </p>
             <br />
-            <p className="hidden md:block w-[36ch]">
+            <p className="hidden md:block w-[36ch] ">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Praesentium cumque similique amet cupiditate quis ad modi quibusdam harum repudiandae,
               vitae accusamus nobis sint quae numquam expedita debitis nulla libero alias?
@@ -127,7 +128,7 @@ export default function Home() {
           </div>
         </main>
 
-        <div className="absolute bottom-8 lg:right-28 right-8 flex gap-4 z-50 py-4 px-6 bg-black/20 rounded-full backdrop-blur-md shadow-lg">
+        <div className="absolute bottom-8 lg:right-10 right-5 flex gap-4 z-50 py-4 px-6 bg-black/20 rounded-full backdrop-blur-md shadow-lg">
           <button
             onClick={prevProject}
             className="p-4 rounded-full bg-[#36064D4D] hover:bg-[#81306e4d] active:bg-white transition-colors backdrop-blur-md cursor-pointer"

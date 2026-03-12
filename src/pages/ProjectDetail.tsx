@@ -19,20 +19,20 @@ export default function ProjectDetail() {
   const nextProject = projects[(index + 1) % projects.length];
 
   return (
-    <div 
-      className={cn("min-h-screen flex flex-col", project.color, project.textColor)}
+    <div
+      className={cn("min-h-screen font-mono  flex flex-col", project.color, project.textColor)}
     >
-      <div className="p-8 md:p-16 flex-1 flex flex-col">
+      <div className="py-12 px-8 md:p-16 flex-1 flex flex-col">
         <header className="mb-12 flex justify-between items-center">
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             state={{ activeIndex: index }}
             className={cn(
               "flex items-center gap-2 font-mono text-sm tracking-wider uppercase transition-opacity",
               project.textColor
             )}
           >
-            <img src="/src/assets/logo-dark.svg" alt="" className="fixed top-10 w-10 lg:w-16 h-auto"/>
+            <img src="/src/assets/logo-dark.svg" alt="" className="lg:fixed z-40 top-10 w-8 lg:w-12 h-auto" />
           </Link>
           <div className="font-mono text-xs opacity-40">
             {project.id.toUpperCase()}.FILE
@@ -57,43 +57,40 @@ export default function ProjectDetail() {
 
           {/* 3. Project Link & Details */}
           <div className="grid md:grid-cols-2 gap-8 border-t border-current/20 pt-8">
-              <div className="grid grid-cols-2 gap-8 font-mono text-xs uppercase tracking-wider opacity-60">
-                <div>
-                  <span className="block mb-1 opacity-50">Client</span>
-                  {project.client}
-                </div>
-                <div>
-                  <span className="block mb-1 opacity-50">Year</span>
-                  {project.year}
-                </div>
-                <div>
-                  <span className="block mb-1 opacity-50">Role</span>
-                  {project.tags.join(", ")}
-                </div>
+            <div className="grid grid-cols-2 gap-8 font-mono text-xs uppercase tracking-wider opacity-60">
+              <div>
+                <span className="block mb-1 opacity-50">Client</span>
+                {project.client}
               </div>
+              <div>
+                <span className="block mb-1 opacity-50">Year</span>
+                {project.year}
+              </div>
+              <div>
+                <span className="block mb-1 opacity-50">Role</span>
+                {project.tags.join(", ")}
+              </div>
+            </div>
 
-              <div className="flex md:justify-end items-start">
-                 <a href="#" className="flex items-center gap-2 font-bold hover:underline decoration-2 underline-offset-4 text-lg">
-                   Visit Live Site <ExternalLink size={20} />
-                 </a>
-              </div>
+            <div className="flex md:justify-end items-start">
+              <a href="#" className="flex items-center gap-2 font-bold hover:underline decoration-2 underline-offset-4 text-lg">
+                Visit Live Site <ExternalLink size={20} />
+              </a>
+            </div>
           </div>
 
           {/* 4. Content */}
-          <div className="prose prose-lg max-w-none opacity-90 leading-relaxed pb-8">
-            <p className="text-2xl font-light mb-8">{project.description}</p>
-            <p>{project.content}</p>
-            <p>
+          <div className="prose prose-lg  max-w-none opacity-90 leading-relaxed pb-8">
+            <p className="text-2xl leading-none font-light mb-8">{project.description}</p>
+            <p className="leading-tight text-xl">{project.content}
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <p>
               Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
           </div>
 
           {/* 5. Navigation Buttons */}
           <div className="grid grid-cols-2 gap-4 md:gap-8 border-t border-current/20 pt-12 ">
-            <Link 
+            <Link
               to={`/project/${prevProject.id}`}
               state={{ direction: -1 }}
               className="group flex flex-col items-start gap-2"
@@ -107,7 +104,7 @@ export default function ProjectDetail() {
               </span>
             </Link>
 
-            <Link 
+            <Link
               to={`/project/${nextProject.id}`}
               state={{ direction: 1 }}
               className="group flex flex-col items-end gap-2"
