@@ -28,22 +28,21 @@ export default function ProjectDetail() {
             to="/" 
             state={{ activeIndex: index }}
             className={cn(
-              "flex items-center gap-2 font-mono text-sm tracking-wider uppercase opacity-60 hover:opacity-100 transition-opacity",
+              "flex items-center gap-2 font-mono text-sm tracking-wider uppercase transition-opacity",
               project.textColor
             )}
           >
-            <ArrowLeft size={16} />
-            Back to Index
+            <img src="/src/assets/logo-dark.svg" alt="" className="fixed top-10 w-10 lg:w-16 h-auto"/>
           </Link>
           <div className="font-mono text-xs opacity-40">
             {project.id.toUpperCase()}.FILE
           </div>
         </header>
 
-        <main className="flex-1 flex flex-col gap-16 max-w-5xl mx-auto w-full">
+        <main className="flex-1 flex flex-col gap-10 max-w-5xl mx-auto w-full">
           {/* 1. Title and Subtitle */}
-          <div>
-            <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-4 leading-[0.9]">
+          <div className="flex flex-col gap-0">
+            <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-2 leading-[0.9]">
               {project.title}
             </h1>
             <p className="text-xl md:text-2xl font-medium opacity-80 max-w-md leading-tight">
@@ -93,7 +92,7 @@ export default function ProjectDetail() {
           </div>
 
           {/* 5. Navigation Buttons */}
-          <div className="grid grid-cols-2 gap-4 md:gap-8 border-t border-current/20 pt-12">
+          <div className="grid grid-cols-2 gap-4 md:gap-8 border-t border-current/20 pt-12 ">
             <Link 
               to={`/project/${prevProject.id}`}
               state={{ direction: -1 }}

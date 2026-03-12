@@ -13,7 +13,7 @@ export function Footer() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 
   return (
-    <footer ref={containerRef} className="relative w-full mt-24 py-24 overflow-hidden">
+    <footer ref={containerRef} className="relative w-full mt-48 py-24 overflow-hidden">
       {/* Glass Background */}
       <div className="absolute inset-0 bg-white/10 backdrop-blur-xl border-t border-white/20 z-0" />
 

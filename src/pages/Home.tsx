@@ -30,40 +30,49 @@ export default function Home() {
     const total = projects.length;
     const steps = (index - activeIndex + total) % total;
     if (steps === 0) return;
-    
+
     setDirection(1);
     setJumpSize(steps);
     setActiveIndex(index);
   };
 
   return (
-    <div className="min-h-screen bg-neutral-900 text-white overflow-x-hidden relative">
+    <div className="min-h-screen bg-[#F7F6E5] text-black font-mono overflow-x-hidden relative">
       <LagosClock />
-      
+
       <div className="h-screen flex flex-col relative z-10">
         <header className="p-8 md:p-16 flex justify-between items-start z-50 pointer-events-none">
           <div className="pointer-events-auto absolute top-14 ">
-            <h1 className="text-4xl md:text-8xl font-black tracking-tighter mb-4 leading-[0.8]">
-              SLANTS<br/>STUDIO
-            </h1>
-            <p className="text-xl md:text-2xl  opacity-60 w-1/2 mt-3">
-              A collection of digital artifacts and interfaces designed for the next era of computing.
+            {/* <h1 className="text-4xl md:text-8xl font-black tracking-tighter mb-4 leading-[0.8]">
+              SLANTS<br />STUDIO
+            </h1> */}
+            <img src="src/assets/logo-dark.svg" alt="" className="w-10 lg:w-16 h-auto sticky top-10" />
+
+            <div className="hidden md:block text-sm opacity-40 pointer-events-auto">
+              EST. 2024
+            </div>
+            <p className="text-sm md:text-lg">
+              Design studio <br />Lagos, Milan
+            </p>
+            <br />
+            <p className="hidden md:block w-[36ch]">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Praesentium cumque similique amet cupiditate quis ad modi quibusdam harum repudiandae,
+              vitae accusamus nobis sint quae numquam expedita debitis nulla libero alias?
             </p>
           </div>
-          <div className="hidden md:block text-right font-mono text-sm opacity-40 pointer-events-auto">
-            EST. 2024
-          </div>
+
         </header>
 
         <main className="flex-1 flex items-center justify-center relative w-full h-full min-h-[600px]">
-          <div className="relative w-full max-w-md aspect-[4/5] mx-auto">
+          <div className="relative w-full max-w-md md:max-w-2/5 aspect-[4/5] mx-auto mt-14">
             {projects.map((project, index) => {
               const total = projects.length;
               const positionIndex = (index - activeIndex + total) % total;
               const isActive = positionIndex === 0;
-              
+
               // Standard target state
-              const rotate = (index * 13 % 30) - 15; 
+              const rotate = (index * 13 % 30) - 15;
               const xOffset = (index * 53 % 140) - 70;
               const yOffset = positionIndex * 35;
               const scale = 1 - (positionIndex * 0.05);
@@ -106,7 +115,7 @@ export default function Home() {
                   animate={animateState}
                   transition={transitionState}
                   onClick={() => handleCardClick(index)}
-                  style={{ 
+                  style={{
                     zIndex: isTossedCard ? undefined : targetZIndex,
                     pointerEvents: "auto"
                   }}
@@ -117,24 +126,26 @@ export default function Home() {
             })}
           </div>
         </main>
+
+        <div className="absolute bottom-8 lg:right-28 right-8 flex gap-4 z-50 py-4 px-6 bg-black/20 rounded-full backdrop-blur-md shadow-lg">
+          <button
+            onClick={prevProject}
+            className="p-4 rounded-full bg-[#36064D4D] hover:bg-[#81306e4d] active:bg-white transition-colors backdrop-blur-md cursor-pointer"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <button
+            onClick={nextProject}
+            className="p-4 rounded-full bg-[#36064D4D] hover:bg-[#81306e4d] active:bg-white transition-colors backdrop-blur-md cursor-pointer"
+          >
+            <ChevronRight size={24} />
+          </button>
+        </div>
       </div>
 
       <Footer />
-      
-      <div className="fixed bottom-8 right-8 flex gap-4 z-50">
-        <button 
-          onClick={prevProject}
-          className="p-4 rounded-full bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-md"
-        >
-          <ChevronLeft size={24} />
-        </button>
-        <button 
-          onClick={nextProject}
-          className="p-4 rounded-full bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-md"
-        >
-          <ChevronRight size={24} />
-        </button>
-      </div>
+
+
     </div>
   );
 }

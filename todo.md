@@ -1,6 +1,3 @@
-- add favicon
-- layout of main page
-- add border to left/right buttons
 - Set page title
 - Content
 - change accent color so menu on iphones changes color

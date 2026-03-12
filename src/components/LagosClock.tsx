@@ -19,7 +19,7 @@ export function LagosClock() {
   }).format(time);
 
   return (
-    <div className="fixed top-8 right-8 text-sm opacity-60 z-50 pointer-events-none text-right">
+    <div className="fixed top-8 right-8 text-xs opacity-60 z-50 pointer-events-none text-right">
       <div>LAGOS, NG</div>
       <div className="text-xl font-bold tracking-widest">{formattedTime}</div>
     </div>

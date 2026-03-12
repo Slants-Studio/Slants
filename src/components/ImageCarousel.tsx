@@ -49,7 +49,7 @@ export function ImageCarousel({ images, className }: ImageCarouselProps) {
 
   return (
     <div className={cn("relative w-full group ", className)}>
-      <div className="relative w-[95vw] ml-[calc((95vw-100%)/-2)] lg:h-screen aspect-video overflow-hidden rounded-xl bg-black/10">
+      <div className="relative w-full md:[w-[65vw] ml-[calc((65vw-100%)/-2)]] aspect-video overflow-hidden rounded-xl bg-black/10">
         <AnimatePresence initial={false} custom={direction}>
           <motion.img
             key={currentIndex}
@@ -77,13 +77,13 @@ export function ImageCarousel({ images, className }: ImageCarouselProps) {
           <span className="text-right max-w-md">{images[currentIndex].caption}</span>
         </div>
 
-        <div className="flex gap-2 self-end md:self-auto">
+        <div className="flex gap-2 self-end md:self-auto z-40 -mt-14 py-2 py-1 px-4  rounded-full backdrop-blur-md shadow-lg">
           <button
             onClick={(e) => {
               e.preventDefault();
               prevImage();
             }}
-            className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-md"
+            className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-md cursor-pointer"
           >
             <ChevronLeft size={20} />
           </button>
@@ -92,7 +92,7 @@ export function ImageCarousel({ images, className }: ImageCarouselProps) {
               e.preventDefault();
               nextImage();
             }}
-            className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-md"
+            className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-md cursor-pointer"
           >
             <ChevronRight size={20} />
           </button>
