@@ -57,8 +57,8 @@ export default function ProjectDetail() {
           </div>
 
           {/* 3. Project Link & Details */}
-          <div className="grid md:grid-cols-2 gap-8 border-t border-current/20 pt-8">
-            <div className="grid grid-cols-2 gap-8 font-mono text-xs uppercase tracking-wider opacity-60">
+          <div className="grid md:grid-cols-2 gap-8 border-t border-current/20 pt-8 ">
+            <div className="grid grid-cols-2 gap-8 font-mono  uppercase tracking-wider text-lg opacity-60">
               <div>
                 <span className="block mb-1 opacity-50">Client</span>
                 {project.client}
@@ -82,8 +82,8 @@ export default function ProjectDetail() {
 
           {/* 4. Content */}
           <div className="prose prose-lg  max-w-none opacity-90 leading-relaxed pb-8">
-            <p className="text-2xl leading-none font-light mb-8">{project.description}</p>
-            <p className="leading-tight text-xl">{project.content}
+            <p className="lg:text-2xl text-xl leading-none font-light mb-8">{project.description}</p>
+            <p className="lg:text-lg leading-tight text-lg">{project.content}
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
               Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
