@@ -40,6 +40,10 @@ export default function ProjectDetail() {
           </div>
         </header>
 
+        <section>
+          
+        </section>
+
         <main className="flex-1 flex flex-col gap-10 max-w-5xl mx-auto w-full">
           {/* 1. Title and Subtitle */}
           <div className="flex flex-col gap-0">

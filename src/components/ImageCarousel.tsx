@@ -77,14 +77,14 @@ export function ImageCarousel({ images, className }: ImageCarouselProps) {
           <span className="text-right max-w-md">{images[currentIndex].caption}</span>
         </div>
 
-        <div className="flex gap-2 self-end md:self-auto z-40 -mt-14 py-2 py-1 px-4  rounded-full backdrop-blur-md shadow-lg">
+        <div className="flex gap-2 self-end md:self-auto  py-2 py-1 px-4  rounded-full backdrop-blur-md ">
           <button
             onClick={(e) => {
               e.preventDefault();
               prevImage();
             }}
             className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-md cursor-pointer"
-          >
+          > 
             <ChevronLeft size={20} />
           </button>
           <button
